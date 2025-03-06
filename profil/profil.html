@@ -4,65 +4,112 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Profil Biodata</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to right, #4b6cb7, #182848);
+            color: white;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            padding: 20px;
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 20px;
+            background: rgba(255, 255, 255, 0.2);
+        }
+        .hero {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+            gap: 20px;
+            padding: 50px 20px;
+        }
+        .hero img {
+            width: 100%;
+            border-radius: 10px;
+        }
+        .biodata, .portfolio {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 10px;
+            padding: 10px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+        }
+        .grid div {
+            padding: 10px;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 10px;
+        }
+        .portfolio .grid img {
+            width: 100%;
+            border-radius: 10px;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.2);
+            margin-top: 20px;
+        }
+        @media (max-width: 768px) {
+            .hero {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+        }
+    </style>
 </head>
 <body>
     <header>
-        <table width="100%">
-            <tr>
-                <td><strong>Irsyadulloh RBN</strong></td>
-                <td align="right">
-                    <a href="#">Tentang Saya</a>
-                    <a href="#">Biodata</a>
-                    <a href="#">Portofolio</a>
-                </td>
-            </tr>
-        </table>
+        <strong>Irsyadulloh RBN</strong>
+        <nav>
+            <a href="#">Tentang Saya</a>
+            <a href="#">Biodata</a>
+            <a href="#">Portofolio</a>
+        </nav>
     </header>
     
-    <section>
-        <table width="100%" border="1">
-            <tr>
-                <td width="60%">
-                    <h2>Selamat Datang di Website Saya</h2>
-                    <p>Saya adalah seorang mahasiswa Sistem Informasi dengan minat di bidang Quality Assurance (QA) Tester, UI/UX Design, dan Sistem Analis. Saya juga memiliki pengalaman dalam desain, pemrograman, serta digital marketing.</p>
-                    <a href="#">Lebih Lanjut</a>
-                </td>
-                <td width="40%" align="center">
-                    <img src="profil/foto1.png" width="600" height="400" alt="Foto Profil">
-                </td>
-            </tr>
-        </table>
+    <section class="hero container">
+        <div>
+            <h2>Selamat Datang di Website Saya</h2>
+            <p>Saya adalah mahasiswa Sistem Informasi dengan minat di bidang Quality Assurance (QA) Tester, UI/UX Design, dan Sistem Analis.</p>
+            <a href="#">Lebih Lanjut</a>
+        </div>
+        <img src="foto1.png" alt="Foto Profil">
     </section>
     
-    <section>
-        <h2 align="center">About Me</h2>
-        <p align="center">Informasi singkat tentang saya</p>
-        <table width="100%" border="1">
-            <tr>
-                <td>Irsyadulloh Ramadhan B.N</td>
-                <td>Sistem Informasi - Universitas Narotama</td>
-                <td>Mahasiswa</td>
-            </tr>
-            <tr>
-                <td>+62 823-3352-1340</td>
-                <td>Fotografi, Desain, Coding</td>
-                <td>Sidoarjo, Indonesia</td>
-            </tr>
-        </table>
+    <section class="biodata container">
+        <h2>About Me</h2>
+        <div class="grid">
+            <div>Irsyadulloh Ramadhan B.N</div>
+            <div>Sistem Informasi - Universitas Narotama</div>
+            <div>Mahasiswa</div>
+            <div>+62 823-3352-1340</div>
+            <div>Fotografi, Desain, Coding</div>
+            <div>Sidoarjo, Indonesia</div>
+        </div>
     </section>
     
-    <section>
-        <h2 align="center">Portofolio</h2>
-        <table width="100%" border="1">
-            <tr>
-                <td align="center"><img src="portfolio/proyek1.png" width="350" height="200" alt="Proyek 1"><br>Proyek 1<br>Desain UI/UX Website</td>
-                <td align="center"><img src="portfolio/proyek2.png" width="350" height="200" alt="Proyek 2"><br>Proyek 2<br>Testing Aplikasi Mobile</td>
-                <td align="center"><img src="portfolio/proyek3.png" width="350" height="200" alt="Proyek 3"><br>Proyek 3<br>Analisis Sistem Perusahaan</td>
-            </tr>
-        </table>
+    <section class="portfolio container">
+        <h2>Portofolio</h2>
+        <div class="grid">
+            <div><img src="proyek1.png" alt="Proyek 1"><br>Proyek 1 - Website Desa Jimbaran Wetan</div>
+            <div><img src="proyek2.png" alt="Proyek 2"><br>Proyek 2 - UI Tablet</div>
+            <div><img src="proyek3.png" alt="Proyek 3"><br>Proyek 3 - UI Mobile</div>
+        </div>
     </section>
     
-    <footer align="center">
+    <footer>
         <p>&copy; 2025 Irsyadullohrbn. All Rights Reserved.</p>
     </footer>
 </body>
