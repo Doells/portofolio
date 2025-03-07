@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Commerce Produk</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; }
+        .container { max-width: 800px; margin: auto; }
+        .product-list { display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; }
+        .product { border: 1px solid #ddd; padding: 10px; border-radius: 5px; width: 200px; }
+        img { width: 100%; border-radius: 5px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Daftar Produk</h2>
+        <label for="category">Filter Kategori:</label>
+        <select id="category" onchange="filterProducts()">
+            <option value="all">Semua</option>
+            <option value="elektronik">Elektronik</option>
+            <option value="fashion">Fashion</option>
+            <option value="makanan">Makanan</option>
+        </select>
+        <div class="product-list" id="product-list"></div>
+    </div>
+
+    <script>
+        const products = [
+            { name: "Laptop", price: 8000000, description: "Laptop gaming high-end", image: "laptop.jpeg", category: "elektronik" },
+            { name: "Kaos Polo", price: 150000, description: "Kaos nyaman dan stylish", image: "kaos.jpeg", category: "fashion" },
+            { name: "Smartphone", price: 16000000, description: "HP dengan kamera terbaik", image: "smartphone.jpeg", category: "elektronik" },
+            { name: "Sepatu Sneakers", price: 350000, description: "Cocok untuk gaya santai", image: "sepatu.jpeg", category: "fashion" },
+            { name: "Coklat Premium", price: 50000, description: "Coklat lezat berkualitas tinggi", image: "coklat.jpeg", category: "makanan" }
+        ];
+
+        function displayProducts(filterCategory = "all") {
+            const productList = document.getElementById("product-list");
+            productList.innerHTML = "";
+            
+            products.filter(product => filterCategory === "all" || product.category === filterCategory)
+                    .forEach(product => {
+                const productCard = document.createElement("div");
+                productCard.classList.add("product");
+                productCard.innerHTML = `
+                    <img src="${product.image}" alt="${product.name}">
+                    <h3>${product.name}</h3>
+                    <p>${product.description}</p>
+                    <strong>Rp ${product.price.toLocaleString()}</strong>
+                `;
+                productList.appendChild(productCard);
+            });
+        }
+
+        function filterProducts() {
+            const category = document.getElementById("category").value;
+            displayProducts(category);
+        }
+
+        document.addEventListener("DOMContentLoaded", () => displayProducts());
+    </script>
+</body>
+</html>
