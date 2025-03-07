@@ -8,20 +8,27 @@
     <style>
         body {
             background: linear-gradient(to right, #4b6cb7, #182848);
-            color: rgb(255, 255, 255);
+            color: #fff;
         }
         .modal-body {
             text-align: center;
-            color: rgb(12, 12, 12);
+            color: #000;
         }
         .hero img {
             width: 100%;
             border-radius: 10px;
         }
-        .grid img {
+        .portfolio-item img {
             width: 100%;
             border-radius: 10px;
             cursor: pointer;
+            transition: transform 0.3s ease-in-out;
+        }
+        .portfolio-item img:hover {
+            transform: scale(1.05);
+        }
+        .carousel-inner img {
+            border-radius: 10px;
         }
         footer {
             text-align: center;
@@ -52,17 +59,35 @@
         <div class="row align-items-center">
             <div class="col-md-6">
                 <h2>Selamat Datang di Website Saya</h2>
-                <p>Saya adalah mahasiswa Sistem Informasi dengan minat di bidang Quality Assurance (QA) Tester, UI/UX Design, dan Sistem Analis.</p>
+                <p>Saya adalah mahasiswa Sistem Informasi dengan minat di bidang Programer, Quality Assurance (QA) Tester, UI/UX Design, dan Sistem Analis.</p>
                 <a href="#" class="btn btn-warning">Lebih Lanjut</a>
             </div>
             <div class="col-md-6">
-                <img src="foto1.png" alt="Foto Profil" class="img-fluid">
+                <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="foto1.png" class="d-block w-100" alt="Foto Profil">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="foto2.jpg" class="d-block w-100" alt="Foto Kedua">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="foto3.jpg" class="d-block w-100" alt="Foto Ketiga">
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon"></span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+                        <span class="carousel-control-next-icon"></span>
+                    </button>
+                </div>
             </div>
         </div>
     </section>
-    
+
     <section class="container text-center" id="biodata">
-        <h2>About Me</h2>
+        <h2>Biodata</h2>
         <div class="row g-3">
             <div class="col-md-4">Irsyadulloh Ramadhan B.N</div>
             <div class="col-md-4">Sistem Informasi - Universitas Narotama</div>
@@ -73,20 +98,20 @@
         </div>
     </section>
     
-    <section class="container text-center py-5" id="portfolio">
+    <section class="container text-center" id="portfolio" style="margin-top: 50px;">
         <h2>Portofolio</h2>
         <div class="row g-3">
-            <div class="col-md-4">
+            <div class="col-md-4 portfolio-item">
                 <img src="proyek1.png" alt="Proyek 1" class="img-fluid" data-bs-toggle="modal" data-bs-target="#modal1">
-                <p>Proyek 1 - Website Desa Jimbaran Wetan</p>
+                <p style="margin-top: 30px;">Website Desa Jimbaran Wetan </p>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-4 portfolio-item">
                 <img src="proyek2.png" alt="Proyek 2" class="img-fluid" data-bs-toggle="modal" data-bs-target="#modal2">
-                <p>Proyek 2 - UI Tablet</p>
+                <p>UI Tablet</p>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-4 portfolio-item">
                 <img src="proyek3.png" alt="Proyek 3" class="img-fluid" data-bs-toggle="modal" data-bs-target="#modal3">
-                <p>Proyek 3 - UI Mobile</p>
+                <p style="margin-top: 30px;">UI Mobile</p>
             </div>
         </div>
     </section>
@@ -94,50 +119,6 @@
     <footer>
         <p>&copy; 2025 Irsyadullohrbn. All Rights Reserved.</p>
     </footer>
-    
-    <!-- Modal -->
-    <div class="modal fade" id="modal1" tabindex="-1">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Proyek 1</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-                </div>
-                <div class="modal-body">
-                    <img src="proyek1.png" alt="Proyek 1" class="img-fluid">
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Minus laborum necessitatibus deleniti eveniet quis vel sed architecto possimus commodi dolorum natus quia velit cumque tenetur, ullam asperiores atque. Nulla, placeat!</p>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="modal fade" id="modal2" tabindex="-1">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Proyek 2</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-                </div>
-                <div class="modal-body">
-                    <img src="proyek2.png" alt="Proyek 2" class="img-fluid">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam suscipit placeat aliquid, corrupti, ex recusandae blanditiis nesciunt reprehenderit assumenda illo sed iusto deleniti at tempore? Amet voluptatem delectus reprehenderit asperiores.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="modal fade" id="modal3" tabindex="-1">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Proyek 3</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-                </div>
-                <div class="modal-body">
-                    <img src="proyek3.png" alt="Proyek 3" class="img-fluid">
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Neque amet excepturi asperiores quasi odio, architecto illo non corrupti ipsum expedita deleniti eum nulla aspernatur rerum officia iusto nam nobis enim.</p>
-                </div>
-            </div>
-        </div>
-    </div>
     
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
