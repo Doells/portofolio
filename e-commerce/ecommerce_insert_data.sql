@@ -1,3 +1,34 @@
+-- Membuat database
+CREATE DATABASE ecommerce;
+USE ecommerce;
+
+--Membuat tabel products
+CREATE TABLE products (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nama_produk VARCHAR(255) NOT NULL,
+    harga INT NOT NULL,
+    deskripsi TEXT,
+    stok INT NOT NULL
+);
+
+--Membuat tabel users
+CREATE TABLE users (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nama VARCHAR(100) NOT NULL,
+    email VARCHAR(100) UNIQUE NOT NULL,
+    password VARCHAR(255) NOT NULL
+);
+
+--Membuat tabel orders
+CREATE TABLE orders (
+    order_id INT AUTO_INCREMENT PRIMARY KEY,
+    user_id INT NOT NULL,
+    product_id INT NOT NULL,
+    quantity INT NOT NULL,
+    total INT NOT NULL,
+    FOREIGN KEY (user_id) REFERENCES users(id),
+    FOREIGN KEY (product_id) REFERENCES products(id)
+);
 
 -- Insert data into products table
 INSERT INTO products (nama_produk, harga, deskripsi, stok) VALUES
