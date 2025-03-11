@@ -13,12 +13,6 @@ if (!empty($nama) && !empty($harga) && !empty($deskripsi)) {
     echo "Harga: Rp " . $harga . "<br>";
     echo "Deskripsi: " . $deskripsi . "<br><br>";
 
-    // Contoh penggunaan operator
-    $ppn = 0.11 * $harga; // menghitung PPN 11%
-    $total = $harga + $ppn;
-
-    echo "PPN (11%): Rp " . $ppn . "<br>";
-    echo "Total Harga (termasuk PPN): Rp " . $total . "<br>";
 
     // Simulasi query penyimpanan ke database (asumsi koneksi sudah dibuat)
     // $koneksi = mysqli_connect("localhost", "root", "", "db_toko");
