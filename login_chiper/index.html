@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login & Registration with Encryption</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Login and Register</h1>
+
+        <!-- Login Form -->
+        <div id="loginForm">
+            <h2>Login</h2>
+            <form action="login.php" method="POST">
+                <input type="text" name="username" id="loginUsername" placeholder="Username" required>
+                <div class="password-container">
+                    <input type="password" name="password" id="loginPassword" placeholder="Password" required>
+                    <span id="toggleLoginPassword" class="eye-icon" onclick="togglePasswordVisibility('loginPassword')">👁️</span>
+                </div>
+                <button type="submit">Login</button>
+            </form>
+            <p>Don't have an account? <a href="#" onclick="toggleForm()">Register here</a></p>
+        </div>
+
+        <!-- Registration Form -->
+        <div id="registerForm" style="display:none;">
+            <h2>Register</h2>
+            <form action="register.php" method="POST">
+                <input type="text" name="username" id="registerUsername" placeholder="Username" required>
+                <div class="password-container">
+                    <input type="password" name="password" id="registerPassword" placeholder="Password" required>
+                    <span id="toggleRegisterPassword" class="eye-icon" onclick="togglePasswordVisibility('registerPassword')">👁️</span>
+                </div>
+                <label for="cipher">Select Encryption:</label>
+                <select name="cipher" id="cipher" required>
+                    <option value="caesar">Caesar Cipher</option>
+                    <option value="hill">Hill Cipher</option>
+                </select>
+                <button type="submit">Register</button>
+            </form>
+            <p>Already have an account? <a href="#" onclick="toggleForm()">Login here</a></p>
+        </div>
+
+        <!-- Encryption Options -->
+        <div>
+            <h2>Encryption Demo</h2>
+            <textarea id="inputText" placeholder="Enter text to encrypt"></textarea>
+            <label for="demoCipher">Select Encryption:</label>
+            <select id="demoCipher">
+                <option value="caesar">Caesar Cipher</option>
+                <option value="hill">Hill Cipher</option>
+            </select>
+            <input type="number" id="shiftValue" placeholder="Shift (for Caesar Cipher)" value="3" />
+            <button onclick="showEncryptionProcess()">Encrypt</button>
+
+            <h3>Encrypted Text:</h3>
+            <p id="encryptedResult"></p>
+
+            <h3>Encryption Process:</h3>
+            <pre id="encryptionProcess"></pre>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
