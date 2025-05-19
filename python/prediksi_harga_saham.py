@@ -8,7 +8,7 @@ import matplotlib.pyplot as plt
 
 # 1. Mengimpor Data
 # Pastikan untuk mengganti file_path dengan path yang sesuai
-file_path = 'C:/Users/DOELLS/Desktop/python/finance.csv'
+file_path = 'C:/Users/DOELLS/Desktop/portofolio/finance.csv'
 data = pd.read_csv(file_path)
 
 # Menyaring kolom yang diperlukan
