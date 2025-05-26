@@ -1,2 +1,2 @@
-# wpu-portofolio
+# Portofolio
 Repository untuk membuat Portofolio
