@@ -6,7 +6,7 @@ class DioService {
   static void init() {
     // LUPAKAN .ENV, KITA PAKAI URL LANGSUNG DI SINI
     final String baseUrl =
-        'http://192.168.1.172/nlhotness-pkkmb-un-2024-2a5c1b240200/public/api';
+        'http://192.168.1.11/nlhotness-pkkmb-un-2024-2a5c1b240200/public/api';
 
     print("--- MENGGUNAKAN URL HARDCODE ---");
     print("URL: $baseUrl");

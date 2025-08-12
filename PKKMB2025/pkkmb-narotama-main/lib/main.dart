@@ -106,8 +106,8 @@ class SplashScreen extends StatelessWidget {
             const Spacer(),
             Padding(
               padding: const EdgeInsets.only(right: 16),
-              child: SvgPicture.asset(
-                'assets/images/logo-white.svg',
+              child: Image.asset(
+                'assets/images/logo-white2.png',
                 width: MediaQuery.of(context).size.width * 0.4,
               ),
             ),

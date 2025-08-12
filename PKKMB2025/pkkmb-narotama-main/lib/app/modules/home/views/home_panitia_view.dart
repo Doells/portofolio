@@ -25,8 +25,10 @@ class HomePanitiaView extends GetView<HomeController> {
                 height: 200,
                 width: MediaQuery.of(context).size.width,
                 decoration: BoxDecoration(
-                    gradient: LinearGradient(
-                        colors: const [Color(0xFF3DB2FF), Color(0xFF1793E6)])),
+                    gradient: LinearGradient(colors: const [
+                  Color.fromARGB(255, 147, 42, 245),
+                  Color(0xFFAF62F8)
+                ])),
               ),
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
