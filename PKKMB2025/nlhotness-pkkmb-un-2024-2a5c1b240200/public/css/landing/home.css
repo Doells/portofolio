@@ -1,0 +1,42 @@
+* {
+    scroll-behavior: smooth;
+}
+
+.hero-background {
+    background: radial-gradient(circle, var(--bg-radial-from, #4A289C), var(--bg-radial-to, #00092B));
+}
+
+#hero::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 150px;
+    background: linear-gradient(to top, #000000,transparent);
+    z-index: 10;
+}
+.hero-section2-background {
+    background: linear-gradient(var(--bg-linear-angle, 0deg), var(--bg-linear-from, #19AEFE), var(--bg-linear-to, #050B33));
+}
+
+.information-background {
+    background: radial-gradient(circle, var(--bg-radial-from, #0B3B74), var(--bg-radial-to, #050B33));
+}
+
+.gradient-text-information {
+    background: linear-gradient(170deg, #D73AFF, #FFFFFF);
+    -webkit-background-clip: text; /* Menggunakan prefix untuk dukungan browser tertentu */
+    background-clip: text;
+    color: transparent; /* Membuat teks transparan */
+}
+
+.gradient-text-pengenalan {
+    background: linear-gradient(140deg, #FE7BE5, #F6635C);
+    -webkit-background-clip: text; /* Menggunakan prefix untuk dukungan browser tertentu */
+    background-clip: text;
+    color: transparent; /* Membuat teks transparan */
+}
+
+.gradient-bg-video1 {
+    background: linear-gradient(var(--bg-linear-angle, 140deg), var(--bg-linear-from, #0E21A0), var(--bg-linear-to, #EC53B0));
+}
